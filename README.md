@@ -1,6 +1,6 @@
 # Terraform with AWS
 
-## [Click here to watch the Lectures.]()
+## [Click here to watch the Lectures.](https://www.youtube.com/playlist?list=PLnRSa-mtH0ngx4ovc58PTZFmI5oIVu6aK)
 
 This is a repository for code shown in the lectures. It contains directory as per the lecture number.
 
