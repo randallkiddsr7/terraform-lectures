@@ -18,6 +18,7 @@ This is a repository for code shown in the lectures. It contains directory as pe
 - [Lecture 4](https://github.com/kodedge-swapneel/terraform-lectures/tree/main/lecture-4) : AWS VPC using Terraform [(Video)](https://youtu.be/VLcvkpUFUMo)
 - [Lecture 5](https://github.com/kodedge-swapneel/terraform-lectures/tree/main/lecture-5) : Setup AWS Application Load Balancer with Auto Scaling Group using Terraform [(Video)](https://youtu.be/1m54kzfjGtM)
 - [Lecture 6](https://github.com/kodedge-swapneel/terraform-lectures/tree/main/lecture-6) : Amazon API Gateway with AWS Lambda function using Terraform [(Video)](https://youtu.be/gpXmaDwfQ50)
+- [Lecture 7](https://github.com/kodedge-swapneel/terraform-lectures/tree/main/lecture-7) : Secure Amazon API Gateway using Cognito User Pool - Terraform  [(Video)](https://youtu.be/Afp2tDUXyWM)
 
 
 ### Perform following steps for deployment:
