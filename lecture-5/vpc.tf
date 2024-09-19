@@ -4,7 +4,7 @@ resource "aws_vpc" "custom_vpc" {
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name = "yt-vpc"
+    Name = "rk-vpc"
   }
 }
 
@@ -12,7 +12,7 @@ resource "aws_vpc" "custom_vpc" {
 variable "vpc_availability_zones" {
   type        = list(string)
   description = "Availability Zones"
-  default     = ["ap-south-1a", "ap-south-1b"]
+  default     = ["us-east-1a", "us-east-1b"]
 }
 
 resource "aws_subnet" "public_subnet" {
@@ -21,7 +21,7 @@ resource "aws_subnet" "public_subnet" {
   cidr_block        = cidrsubnet(aws_vpc.custom_vpc.cidr_block, 8, count.index + 1)
   availability_zone = element(var.vpc_availability_zones, count.index)
   tags = {
-    Name = "YT Public subnet ${count.index + 1}"
+    Name = "RK Public subnet ${count.index + 1}"
   }
 }
 
@@ -31,7 +31,7 @@ resource "aws_subnet" "private_subnet" {
   cidr_block        = cidrsubnet(aws_vpc.custom_vpc.cidr_block, 8, count.index + 3)
   availability_zone = element(var.vpc_availability_zones, count.index)
   tags = {
-    Name = "YT Private subnet ${count.index + 1}"
+    Name = "RK Private subnet ${count.index + 1}"
   }
 }
 
@@ -39,7 +39,7 @@ resource "aws_subnet" "private_subnet" {
 resource "aws_internet_gateway" "igw_vpc" {
   vpc_id = aws_vpc.custom_vpc.id
   tags = {
-    Name = "YT-Internet Gateway"
+    Name = "RK-Internet Gateway"
   }
 }
 
@@ -75,7 +75,7 @@ resource "aws_nat_gateway" "yt-nat-gateway" {
   subnet_id     = element(aws_subnet.public_subnet[*].id, 0)
   depends_on    = [aws_internet_gateway.igw_vpc]
   tags = {
-    Name = "YT-Nat Gateway"
+    Name = "RK-Nat Gateway"
   }
 }
 
